@@ -7,18 +7,18 @@
 
 
     function OutputFormDataToConsole() {
-        console.log(`%c ---------------------------------------`, "color: blue;");
+        console.log(`%c ---------------------------------------`, "color: red;");
         console.log(`%c Form Data`, "font-weight:bold; font-size: 16px; color: blue;");
-        console.log(`%c ---------------------------------------`, "color: blue;");
+        console.log(`%c ---------------------------------------`, "color: red;");
         console.log(`%c Full Name     : ${FullName.value}`, "color: blue;");
         console.log(`%c Contact Number: ${ContactNumber.value}`, "color: blue;");
         console.log(`%c Email Address : ${EmailAddress.value}`, "color: blue;");
         console.log(`%c Your Message  : ${Message.value}`, "color: blue;");
-        console.log(`%c ---------------------------------------`, "color: blue;");
+        console.log(`%c ---------------------------------------`, "color: red;");
 
-        console.log(`%c ---------------------------------------`, "color: blue;");
+        console.log(`%c ---------------------------------------`, "color: red;");
         console.log(`%c Form Properties`, "font-weight:bold; font-size: 16px; color: blue;");
-        console.log(`%c ---------------------------------------`, "color: blue;");
+        console.log(`%c ---------------------------------------`, "color: red;");
         console.log(`%c Form Length     : ${document.forms[0].length}`, "color: blue;");
 
         for (let index = 0; index < document.forms[0].length; index++) {
@@ -48,16 +48,16 @@
                 element.addEventListener("invalid", function () {
                     switch(element.id) {
                         case "FullName":
-                        element.setCustomValidity("You must enter an appropriate Full Name with at least 2 characters");
+                        element.setCustomValidity("You have missed to enter an appropriate Full Name with at least 2 characters.");
                         break;
                         case "ContactNumber":
-                        element.setCustomValidity("You must enter a phone number with the pattern (###) ###-####");
+                        element.setCustomValidity("You have missed to enter a phone number with the pattern (###) ###-####.");
                         break;
                         case "EmailAddress":
-                        element.setCustomValidity("Your email address is not valid");
+                        element.setCustomValidity("You have missed to enter Your email address in a valid format.");
                         break;
                         case "Message":
-                        element.setCustomValidity("You must enter a message");
+                        element.setCustomValidity("You have missed to enter a message.");
                         break;
                         default:
                         element.setCustomValidity("This Field is Required");
